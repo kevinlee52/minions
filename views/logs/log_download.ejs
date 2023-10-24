@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs</title>
+</head>
+<body>
+    <h2><%= date %></h2>
+    <h2><%= model %></h2>
+</body>
+<script>
+    setTimeout(() => { 
+        let log_lk = document.createElement('a');
+        // log_lk.setAttribute('download', 'filename.ext'); 
+        log_lk.setAttribute('href', 'http://nancafe2-funtest-03:1686/logs/ci/download?date=<%= date %>&model=<%= model %>'); 
+        document.body.appendChild(log_lk);
+        log_lk.click();
+        document.body.removeChild(log_lk);
+    }, 100)
+</script>
+</html>
